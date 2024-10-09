@@ -124,7 +124,7 @@ export default function TicTacToe() {
             disabled={!isPlayerTurn || cell !== null || winningLine !== null}
             className={`w-20 h-20 bg-white text-4xl font-bold border-2 border-gray-400 rounded-md shadow-md hover:bg-blue-100 transition ${
               cell === 'X' ? 'text-red-600' : cell === 'O' ? 'text-blue-600' : ''
-            } ${winningLine && winningLine.includes(idx) ? 'bg-green-200' : ''}`} // Highlight winning line
+            }`} 
           >
             {cell}
           </button>

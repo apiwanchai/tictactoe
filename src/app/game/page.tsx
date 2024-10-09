@@ -9,7 +9,7 @@ export default function TicTacToe() {
   const [isPlayerTurn, setIsPlayerTurn] = useState(true); 
   const [score, setScore] = useState(0);
   const [consecutiveWins, setConsecutiveWins] = useState(0);
-  const [winningLine, setWinningLine] = useState<number[] | null>(null); // New state for winning line
+  const [winningLine, setWinningLine] = useState<number[] | null>(null); 
 
   const winningLines = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -21,7 +21,7 @@ export default function TicTacToe() {
     for (const line of winningLines) {
       const [a, b, c] = line;
       if (newBoard[a] && newBoard[a] === newBoard[b] && newBoard[a] === newBoard[c]) {
-        setWinningLine(line);  // Store the winning line
+        setWinningLine(line);  
         return newBoard[a];
       }
     }
@@ -47,7 +47,7 @@ export default function TicTacToe() {
 
     if (checkDraw(newBoard)) {
    
-      setTimeout(resetBoard, 1000);  // Automatically reset after 1 second
+      setTimeout(resetBoard, 1000);  
       return;
     }
 
@@ -71,7 +71,7 @@ export default function TicTacToe() {
     
       setConsecutiveWins(0); 
       setScore(score - 1); 
-      setTimeout(resetBoard, 1000);  // Automatically reset after 1 second
+      setTimeout(resetBoard, 1000);  
     } else if (checkDraw(newBoard)) {
   
       setTimeout(resetBoard, 1000);

@@ -17,7 +17,7 @@ export default function TicTacToe() {
     [0, 4, 8], [2, 4, 6]
   ];
 
-  const checkWinner = (newBoard: any[]) => {
+  const checkWinner = (newBoard: unknown[]) => {
     for (const line of winningLines) {
       const [a, b, c] = line;
       if (newBoard[a] && newBoard[a] === newBoard[b] && newBoard[a] === newBoard[c]) {
@@ -28,7 +28,7 @@ export default function TicTacToe() {
     return null;
   };
 
-  const checkDraw = (newBoard: any[]) => {
+  const checkDraw = (newBoard: unknown[]) => {
     return newBoard.every(cell => cell !== null);
   };
 
@@ -111,6 +111,7 @@ export default function TicTacToe() {
 
       return () => clearTimeout(botTimer);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPlayerTurn, board]);
 
   return (

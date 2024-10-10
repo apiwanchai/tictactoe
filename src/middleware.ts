@@ -1,4 +1,3 @@
-// middleware.ts
 import { NextResponse } from "next/server";
 import { getToken } from "next-auth/jwt";
 
@@ -7,7 +6,7 @@ export async function middleware(req) {
 
   if (!token) {
     const url = req.nextUrl.clone();
-    url.pathname = "/login"; // Redirect ไปยังหน้า login แทนการ redirect ไปยัง /
+    url.pathname = "/login"; 
     return NextResponse.redirect(url);
   }
 
@@ -15,5 +14,5 @@ export async function middleware(req) {
 }
 
 export const config = {
-  matcher: ["/game","/"], // ตรวจสอบเฉพาะเส้นทาง /game
+  matcher: ["/game","/"], 
 };
